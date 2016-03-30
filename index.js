@@ -42,8 +42,8 @@
 			});
 		}
 
-		//var pushText;
-		//var pushUrl;
+		var pushText;
+		var pushUrl;
 
 		function search(query, res) {
 
@@ -79,7 +79,7 @@
 				return;
 			}
 
-			/*
+			
 			if (query_split[0].toLowerCase() === 'push'){
 				res.add({
 					id: "setPushText",
@@ -100,7 +100,7 @@
 				});
 				return;
 			}
-			*/
+			
 
 	    	res.add({
 	    		id: "helpText",
@@ -129,12 +129,6 @@
 	    		});
 	    	}
 	    	});
-
-/*
-	    	if (query_trim.length === 0) {
-	      		return;
-	    	}
-*/
 		}
 
 		function loadPushes(callback){
@@ -276,7 +270,7 @@
 			}	
 		}
 
-		/*
+		
 		function hashString(string){
 			// Thanks http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/ !
 			var hash = 0;
@@ -344,7 +338,6 @@
 			toast.enqueue("Push sent successfully!");
 			app.setInput("");
 		}
-		*/
 
 		return { startup, search, execute };
 	};
