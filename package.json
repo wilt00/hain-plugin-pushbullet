@@ -1,11 +1,11 @@
 {
   "name": "hain-plugin-pushbullet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Send and receive Pushbullet pushes through the Hain app launcher",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wilt00/REPLACEME"
+    "url": "git+https://github.com/wilt00/hain-plugin-pushbullet"
   },
   
   "keywords": [
@@ -15,9 +15,9 @@
   "author": "Will Toher",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wilt00/REPLACEME/issues"
+    "url": "https://github.com/wilt00/hain-plugin-pushbullet/issues"
   },
-  "homepage": "https://github.com/wilt00/REPLACEME#readme",
+  "homepage": "https://github.com/wilt00/hain-plugin-pushbullet#readme",
   "hain": {
     "prefix": "/pushbullet",
     "usage": "/pushbullet [text] [url]",
