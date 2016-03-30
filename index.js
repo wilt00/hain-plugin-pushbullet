@@ -77,9 +77,9 @@
 			}
 
 	    	res.add({
-	    		id: "helpText",
-	    		title: "To send a push, execute /pushbullet push [url] [description]",
-	    		desc: "Your recently sent pushes will be loaded below"
+	    		id: "loadingText",
+	    		title: "Your pushes are now loading below",
+	    		desc: "Please wait..."
 	    	});
 
 	    	loadPushes( (pushes) => {
@@ -101,6 +101,7 @@
 	    			title:titleString,
 	    			desc:descString
 	    		});
+	    		res.remove("loadingText");
 	    	}
 	    	});
 		}
