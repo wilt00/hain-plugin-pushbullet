@@ -13,7 +13,6 @@
 		const https = require("https");
 		const fs = require("fs");
 		const path = require("path");
-		//const validUrl = require("valid-url");
 
 		const settingsFileName = path.resolve(__dirname, "settings.json");	
 		// Required because ./ gives inconsistent results.
@@ -23,26 +22,28 @@
 		function startup() {
 			fs.access(settingsFileName, fs.F_OK, (err) => {
 				if(err){
-					logger.log("Creating settings file at " + settingsFileName);
+					logger.log("Pushbullet: Creating settings file at " + settingsFileName);
 					settings = {};
 					saveSettings({
 						exists: true,
 						hasValidToken: false
 					}, () => {
 						settings = require(settingsFileName);
+						logger.log(settings);
+						logger.log("Pushbullet settings file exists: " + settings.exists);
+						logger.log("Pushbullet token set: " + settings.hasValidToken);
 					});
 				}else{
 					settings = require(settingsFileName);
-					logger.log("Settings file: " + settingsFileName);
+					logger.log("Pushbullet settings file: " + settingsFileName);
+					logger.log("Pushbullet settings file exists: " + settings.exists);
+					logger.log("Pushbullet token set: " + settings.hasValidToken);
 				}
 			});
-	
-			logger.log("Settings file exists: " + settings.exists);
-			logger.log("Token set: " + settings.hasValidToken);
 		}
 
-		var pushText;
-		var pushUrl;
+		//var pushText;
+		//var pushUrl;
 
 		function search(query, res) {
 
@@ -78,6 +79,7 @@
 				return;
 			}
 
+			/*
 			if (query_split[0].toLowerCase() === 'push'){
 				res.add({
 					id: "setPushText",
@@ -98,6 +100,7 @@
 				});
 				return;
 			}
+			*/
 
 	    	res.add({
 	    		id: "helpText",
@@ -262,18 +265,18 @@
 					} else {
 						logger.log("Settings saved to " + settingsFileName);
 					}
-				});
+					toast.enqueue("Pushbullet settings saved!");
 
-
+					if(callback !== undefined){
+						callback();
+					}
+				});	
 			}catch(e){
 				logger.log(e.message);
-			}
-
-			if(callback !== undefined){
-				callback();
-			}
+			}	
 		}
 
+		/*
 		function hashString(string){
 			// Thanks http://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/ !
 			var hash = 0;
@@ -341,6 +344,7 @@
 			toast.enqueue("Push sent successfully!");
 			app.setInput("");
 		}
+		*/
 
 		return { startup, search, execute };
 	};
