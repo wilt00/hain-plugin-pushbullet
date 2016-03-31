@@ -1,6 +1,6 @@
 {
   "name": "hain-plugin-pushbullet",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Send and receive Pushbullet pushes through the Hain app launcher",
   "main": "index.js",
   "repository": {
@@ -20,7 +20,7 @@
   "homepage": "https://github.com/wilt00/hain-plugin-pushbullet#readme",
   "hain": {
     "prefix": "/pushbullet",
-    "usage": "/pushbullet [text] [url]",
+    "usage": "/pushbullet",
     "icon": "pushbullet-transparent.png",
     "redirect": "/pushbullet"
   }
