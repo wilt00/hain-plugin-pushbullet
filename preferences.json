@@ -1,0 +1,10 @@
+{
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string",
+      "title": "Pushbullet access token",
+      "default": null
+    }
+  }
+}
