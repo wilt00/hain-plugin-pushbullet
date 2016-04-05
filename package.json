@@ -1,6 +1,6 @@
 {
   "name": "hain-plugin-pushbullet",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Send and receive Pushbullet pushes through the Hain app launcher",
   "main": "index.js",
   "repository": {
